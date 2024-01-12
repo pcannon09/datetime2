@@ -98,6 +98,9 @@ Get date info:
 int dayVar = dt::day(); // Get current day
 int monthVar = dt::month(); // Get current month
 int yearVar = dt::year(); // Get current year
+int weekDayVar = dt::wday(); // Get week day
+int yearDayVar = dt::yday();
+int isdstVar = dt::isdst();
+
 const char *zoneVar = dt::timezone();
-std::cout << "Date (More info)" << " Day of week: " << dt::wday() << " Day of year: " << dt::yday() << " DST: " << dt::isdst() << "\n";
 ```
