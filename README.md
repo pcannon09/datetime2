@@ -29,7 +29,7 @@ Definition in hpp file:
 ```cpp
 sysClock get();
 ```
-Howto get current time
+How to get current time
 ```cpp
 sysClock timeNow = dt::get();
 ```
