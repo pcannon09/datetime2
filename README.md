@@ -92,3 +92,12 @@ int isdst(); // Get DST
 
 const char *timezone(); // Get current timezone
 ```
+
+Get date info:
+```cpp
+int dayVar = dt::day(); // Get current day
+int monthVar = dt::month(); // Get current month
+int yearVar = dt::year(); // Get current year
+const char *zoneVar = dt::timezone();
+std::cout << "Date (More info)" << " Day of week: " << dt::wday() << " Day of year: " << dt::yday() << " DST: " << dt::isdst() << "\n";
+```
