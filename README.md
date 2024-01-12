@@ -62,7 +62,7 @@ const char *returnValue = amOrPm(timeNow);
 ```
 
 6. How to get time info
-Definitions:
+Definitions in hpp file:
 ```cpp
 int sec(sysClock timeNow); // Get second
 int hr(sysClock timeNow); // Get hour
@@ -78,4 +78,17 @@ int minVar = dt::min(timeNow); // This can get the current minute (You can use '
 int secVar = dt::sec(timeNow); // This can get the current second (You can use 'dt::second()' aswell)
 int msVar = dt::ms(timeNow); // This can get the current millisecond (You can use 'dt::millisecond' aswell) 
 int usVar = dt::us(timeNow); // This can get the current microsecond (You can use 'dt::microsecond' aswell)
+```
+
+7. Get date info
+Definitions in hpp file
+```cpp
+int year(); // Get current year
+int wday(); // Get day of the week
+int day(); // Get day
+int month(); // Get month
+int yday(); // Get day of the year
+int isdst(); // Get DST
+
+const char *timezone(); // Get current timezone
 ```
