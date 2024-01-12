@@ -1,4 +1,4 @@
-# datetime 2.0
+# Datetime 2.0
 ---
 Version 2.0 of the original datetime lib from pcannon09!
 
