@@ -99,8 +99,8 @@ int dayVar = dt::day(); // Get current day
 int monthVar = dt::month(); // Get current month
 int yearVar = dt::year(); // Get current year
 int weekDayVar = dt::wday(); // Get week day
-int yearDayVar = dt::yday();
-int isdstVar = dt::isdst();
+int yearDayVar = dt::yday(); // Get year day
+int isdstVar = dt::isdst(); // Get DST
 
 const char *zoneVar = dt::timezone();
 ```
