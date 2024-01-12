@@ -1,9 +1,6 @@
-# datetime 
-## 2.0
+# datetime 2.0
 ---
 Version 2.0 of the original datetime lib from pcannon09!
-
----
 
 1. Include:
 ```cpp
@@ -50,4 +47,28 @@ How to set 12h or 24h:
 bool optionalVariable = set24h(false);
 // This code will set the hout format to 24h
 bool optionalVariable = set24h(true);
+```
+
+5. How to get if it's Am or Pm
+Definition in hpp file:
+```cpp
+const char *amOrPm(sysClock timeNow);
+```
+
+How to use it:
+```cpp
+// This will return Am or Pm
+const char *returnValue = amOrPm(timeNow);
+```
+
+6. How to get time info
+Definitions:
+
+Get time info:
+```cpp
+int hourVar = dt::hr(timeNow); // This can get the current hour (You can use 'dt::hour()' aswell)
+int minVar = dt::min(timeNow); // This can get the current minute (You can use 'dt::minute()' aswell)
+int secVar = dt::sec(timeNow); // This can get the current second (You can use 'dt::second()' aswell)
+int msVar = dt::ms(timeNow); // This can get the current millisecond (You can use 'dt::millisecond' aswell) 
+int usVar = dt::us(timeNow); // This can get the current microsecond (You can use 'dt::microsecond' aswell)
 ```
