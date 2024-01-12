@@ -63,6 +63,13 @@ const char *returnValue = amOrPm(timeNow);
 
 6. How to get time info
 Definitions:
+```cpp
+int sec(sysClock timeNow); // Get second
+int hr(sysClock timeNow); // Get hour
+int min(sysClock timeNow); // Get min
+int ms(sysClock timeNow); // Get millisecond
+int us(sysClock timeNow); // Get microsecond
+```
 
 Get time info:
 ```cpp
