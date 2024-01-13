@@ -102,5 +102,5 @@ int weekDayVar = dt::wday(); // Get week day
 int yearDayVar = dt::yday(); // Get year day
 int isdstVar = dt::isdst(); // Get DST
 
-const char *zoneVar = dt::timezone();
+std::string  zoneVar = dt::timezone();
 ```
