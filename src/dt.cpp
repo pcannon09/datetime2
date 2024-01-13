@@ -1,9 +1,10 @@
 #include <chrono>
 #include <ctime>
+#include <string>
 
 namespace dt 
 {
-    const char *version = "2.0";
+    std::string version = "2.0";
 
     bool modeIs24h = true;
 
@@ -27,7 +28,7 @@ namespace dt
         return x;
     }
 
-    const char *amOrPm(sysClock timeNow)
+    std::string amOrPm(sysClock timeNow)
     {
         auto x = std::chrono::duration_cast<std::chrono::hours>(timeNow.time_since_epoch());
 
@@ -53,26 +54,26 @@ namespace dt
 
     int hour(sysClock timeNow)
     {
-        auto x = std::chrono::duration_cast<std::chrono::hours>(timeNow.time_since_epoch());
-        
-        if (modeIs24h)
+        std::tm *timeNowX = std::localtime(&xtm);
+
+        if (amOrPm(timeNow) == "Pm" && modeIs24h)
         {
-            return static_cast<int>(x.count() % 24);
-        }    
+            return timeNowX->tm_hour - 12;
+        }
 
-        return static_cast<int>(x.count() % 12);
+        return timeNowX->tm_hour;
     }
 
-    int min(sysClock timeNow)
+    int min()
     {
-        auto x = std::chrono::duration_cast<std::chrono::minutes>(timeNow.time_since_epoch());
+        std::tm *timeNowX = std::localtime(&xtm);
 
-        return static_cast<int>(x.count() % 60);
+        return timeNowX->tm_min;
     }
 
-    int minute(sysClock timeNow)
+    int minute()
     {
-        return min(timeNow);
+        return min();
     }
 
     int hr(sysClock timeNow)
@@ -150,7 +151,7 @@ namespace dt
         return timeNowX->tm_isdst;
     }
 
-    const char *timezone()
+    std::string timezone()
     {
         std::tm *timeNowX = std::localtime(&xtm);
 
