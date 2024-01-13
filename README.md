@@ -11,12 +11,12 @@ Version 2.0 of the original datetime lib from pcannon09!
 
 Definition in hpp file:
 ```cpp
-extern const char *version;
+extern std::string version;
 ```
 
 How to get version
 ```cpp
-const char *datetimeVersion = dt::version;
+std::string datetimeVersion = dt::version;
 ```
 
 3. Get current time
@@ -52,13 +52,13 @@ bool optionalVariable = set24h(true);
 5. How to get if it's Am or Pm
 Definition in hpp file:
 ```cpp
-const char *amOrPm(sysClock timeNow);
+std::string amOrPm(sysClock timeNow);
 ```
 
 How to use it:
 ```cpp
 // This will return Am or Pm
-const char *returnValue = amOrPm(timeNow);
+std::string returnValue = amOrPm(timeNow);
 ```
 
 6. How to get time info
@@ -66,7 +66,7 @@ Definitions in hpp file:
 ```cpp
 int sec(sysClock timeNow); // Get second
 int hr(sysClock timeNow); // Get hour
-int min(sysClock timeNow); // Get min
+int min(); // Get min
 int ms(sysClock timeNow); // Get millisecond
 int us(sysClock timeNow); // Get microsecond
 ```
@@ -90,7 +90,7 @@ int month(); // Get month
 int yday(); // Get day of the year
 int isdst(); // Get DST
 
-const char *timezone(); // Get current timezone
+std::string timezone(); // Get current timezone
 ```
 
 Get date info:
