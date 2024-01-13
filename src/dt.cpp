@@ -56,7 +56,7 @@ namespace dt
     {
         std::tm *timeNowX = std::localtime(&xtm);
 
-        if (amOrPm(timeNow) == "Pm" && modeIs24h)
+        if (amOrPm(timeNow) == "Pm" && !modeIs24h)
         {
             return timeNowX->tm_hour - 12;
         }
