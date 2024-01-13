@@ -1,10 +1,11 @@
 #pragma once
 
 #include <chrono>
+#include <string>
 
 namespace dt 
 {
-    extern const char *version;
+    extern std::string version;
 
     typedef std::chrono::time_point<std::chrono::system_clock> sysClock;
 
@@ -19,8 +20,8 @@ namespace dt
 
     /// @brief Gets if it's Am or Pm
     /// @param sysClock
-    /// @return const char*
-    const char *amOrPm(sysClock timeNow);
+    /// @return std::string 
+    std::string amOrPm(sysClock timeNow);
 
     /// @brief Get second from the last update
     /// @param timeNow
@@ -43,14 +44,12 @@ namespace dt
     int hr(sysClock timeNow);
 
     /// @brief Get minute from the last update
-    /// @param timeNow
     /// @return int
-    int minute(sysClock timeNow);
+    int minute();
 
     /// @brief Get minute from the last update
-    /// @param timeNow
     /// @return int
-    int min(sysClock timeNow);
+    int min();
 
     /// @brief Get millisecond from the last update
     /// @param timeNow
@@ -97,6 +96,6 @@ namespace dt
     int isdst();
     
     /// @brief Gets the current time zone 
-    /// @return const char*
-    const char *timezone();
+    /// @return std::string 
+    std::string timezone();
 }
